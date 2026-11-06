@@ -22,7 +22,7 @@ def poke_info(name_or_id: str, data: dict) -> str:
     name_or_id = name_or_id.replace(",", ".")
 
     if name_or_id.replace(".", "").isnumeric() == True and name_or_id.count(".") <= 1:
-        id = float(name_or_id.replace(".", ""))
+        id = float(name_or_id)
         if id < 1 or (id > 1025 and id < 10001) or id > 10326 or int(id) != id:
             return("ID is invalid. Please enter a valid name or ID.")
         url2 = f"https://pokeapi.co/api/v2/pokemon/{name_or_id}"
